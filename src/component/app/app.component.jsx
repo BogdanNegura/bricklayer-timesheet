@@ -1,13 +1,13 @@
 import React from 'react'
-import { FormOne } from '../form-one'
-import { OutputForm1 } from '../output-form-1'
+import WeekDays from '../week-days'
 
-export const TimeSheetApp = () => {
+const TimeSheetApp = () => {
     return (
         <div>
             <h1>Timesheet App</h1>
-            <FormOne/>
-            <OutputForm1/>
+            <WeekDays/>
         </div>
     )
 }
+
+export default TimeSheetApp

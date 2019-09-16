@@ -1,2 +1,1 @@
-import { TimeSheetApp } from './app.component'
-export { TimeSheetApp }
+export { default } from './app.component'
