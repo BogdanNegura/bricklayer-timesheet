@@ -1,20 +1,37 @@
 import React, { useState } from 'react'
 import { StyledWeekDays } from './week-days.style'
 
+const days = [
+    { name: 'monday', amount: 0 }, 
+    { name: 'tuesday', amount: 0 },
+    { name: 'wednesday', amount: 0 },
+    { name: 'thursday', amount: 0 },
+    { name: 'friday', amount: 0 },
+    { name: 'saturday', amount: 0 },
+    { name: 'sunday', amount: 0 },
+]
+
 const WeekDays = () => {
 
-    const [day, setDay] = useState('')
+    const [daysList, setDaysList] = useState(days)
+    const handleChange = (withValue, name) => {
+        setDaysList(daysList.map(day => day.name === name ? ({ ...day, amount: +withValue }) : day))
+        console.log(name, withValue)
+    }
 
     return (
         <StyledWeekDays>
-            <label>Monday: <input type="number" onChange={e => setDay(e.target.value)} value={day}/></label>
-            <label>Tuesday: <input type="number" onChange={e => setDay(e.target.value)} value={day}/></label>
-            <label>Wednesday: <input type="number" onChange={e => setDay(e.target.value)} value={day}/></label>
-            <label>Thursday: <input type="number" onChange={e => setDay(e.target.value)} value={day}/></label>
-            <label>Friday: <input type="number" onChange={e => setDay(e.target.value)} value={day}/></label>
-            <label>Saturday: <input type="number" onChange={e => setDay(e.target.value)} value={day}/></label>
-            <label>Sunday: <input type="number" onChange={e => setDay(e.target.value)} value={day}/></label>
+            {daysList.map(({name, amount}) => {
+                return (
+                    <label>{name}: <input type="number" onChange={e => handleChange(e.target.value, name)} value={amount}/></label>
+                )
+            })}
+
+            <div> SUM: {
+                daysList.map(({ amount }) => amount).reduce((acc, cur) => acc + cur, 0)
+            }</div>
         </StyledWeekDays>
+
     )
 }
 
