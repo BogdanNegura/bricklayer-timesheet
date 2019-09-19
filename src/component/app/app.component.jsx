@@ -1,6 +1,7 @@
 import React from 'react'
 import WeekDays from '../week-days'
 import TotalHours from '../total-hours'
+import './app.component.css'
 
 const TimeSheetApp = () => {
     return (
