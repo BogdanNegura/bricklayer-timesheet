@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyledWeekDays } from './week-days.style'
+import { StyledWeekDays, StyledTotalHours } from './week-days.style'
 
 const days = [
     { name: 'monday', amount: 0 }, 
@@ -19,17 +19,18 @@ const WeekDays = () => {
         console.log(name, withValue)
     }
 
+
     return (
         <StyledWeekDays>
             {daysList.map(({name, amount}) => {
                 return (
-                    <label>{name}: <input type="number" onChange={e => handleChange(e.target.value, name)} value={amount}/></label>
+                    <label>{name}: <input type="number" onChange={e => {handleChange(e.target.value, name)}} value={amount}/></label>
                 )
             })}
 
-            <div> SUM: {
+            <StyledTotalHours> Total Hours: {
                 daysList.map(({ amount }) => amount).reduce((acc, cur) => acc + cur, 0)
-            }</div>
+            }</StyledTotalHours>
         </StyledWeekDays>
 
     )

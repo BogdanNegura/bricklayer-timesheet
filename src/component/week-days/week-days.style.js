@@ -7,3 +7,7 @@ export const StyledWeekDays = styled.div`
     line-height: 2rem;
     font-size: 2rem;
 `
+
+export const StyledTotalHours = styled.div`
+    color: blue;
+`

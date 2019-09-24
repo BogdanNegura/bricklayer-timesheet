@@ -2,7 +2,7 @@ import React from 'react'
 
 const TotalHours = () => {
     return (
-        <h1>Total hours: {}</h1>
+        <h1> {}</h1>
     )
 }
 
