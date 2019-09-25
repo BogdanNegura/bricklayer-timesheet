@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { StyledWeekDays, StyledTotalHours } from './week-days.style'
 
 const days = [
-    { name: 'monday', amount: 0 }, 
-    { name: 'tuesday', amount: 0 },
-    { name: 'wednesday', amount: 0 },
-    { name: 'thursday', amount: 0 },
-    { name: 'friday', amount: 0 },
-    { name: 'saturday', amount: 0 },
-    { name: 'sunday', amount: 0 },
+    { name: 'monday', amount: '' }, 
+    { name: 'tuesday', amount: '' },
+    { name: 'wednesday', amount: '' },
+    { name: 'thursday', amount: '' },
+    { name: 'friday', amount: '' },
+    { name: 'saturday', amount: '' },
+    { name: 'sunday', amount: '' },
 ]
 
 const WeekDays = () => {
@@ -18,6 +18,7 @@ const WeekDays = () => {
         setDaysList(daysList.map(day => day.name === name ? ({ ...day, amount: +withValue }) : day))
         console.log(name, withValue)
     }
+    
 
 
     return (
