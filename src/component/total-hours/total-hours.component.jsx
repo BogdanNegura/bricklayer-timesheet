@@ -1,8 +1,9 @@
 import React from 'react'
 
-const TotalHours = () => {
+const TotalHours = ({th}) => {
+
     return (
-        <h1> {}</h1>
+        <h1> {th}</h1>
     )
 }
 

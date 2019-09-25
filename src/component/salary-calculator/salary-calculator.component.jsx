@@ -3,18 +3,25 @@ import { StyledSalaryCalculator } from './salary-calculator.style'
 // import { StyledWeekDays } from '../week-days/week-days.style'
 
 const fields = [
-    { name: 'Rate Hours', amount: '', id: '1' },
-    { name: 'Retention %', amount: '', id: '2' },
-    { name: 'Tax %', amount: '', id: '3'},
+    { name: 'Rate/hours', amount: 25, id: '1' }, // index 0
+    { name: 'Retention %', amount: 3, id: '2' }, // index 1
+    { name: 'Tax %', amount: 20, id: '3'}, // index 2
 ]
 
 
-const SalaryCalculator = () => {
+const SalaryCalculator = ({ toho }) => {
+
+
 
     const [fieldsList, setFieldsList] = useState(fields)
 
     const handleChange = (withValue, name) => {
+        
         setFieldsList(fieldsList.map(field => field.name === name ? ({ ...field, amount: +withValue }) : field))
+    }
+
+    const getTotalIncomeNow = () => {
+        return toho * fields[0].amount * (100-fields[1].amount)/100 * (100-fields[2].amount)/100
     }
     
     // const totalHours = (totalHours)
@@ -27,13 +34,13 @@ const SalaryCalculator = () => {
     return (
         <StyledSalaryCalculator>
             <h2>Salary Calculator</h2>
-            {fieldsList.map(({name, amount}) => {
+            {fieldsList.map(({name, amount, id}) => {
                 return (
-                    <label>{name}:<input type="number" onChange={e => {handleChange(e.target.value, name)}} value={amount} key={fields.id}/></label>
+                    <label key={id}>{name}:<input type="number" onChange={e => {handleChange(e.target.value, name)}} value={amount} key={fields.id}/></label>
                 )
             })}
                 
-            <h2>Total Income: {}</h2>
+            <h2>Total Income: £ {getTotalIncomeNow()}</h2>
             
         </StyledSalaryCalculator>
     )

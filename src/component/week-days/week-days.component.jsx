@@ -11,11 +11,15 @@ const days = [
     { name: 'sunday', amount: '' },
 ]
 
-const WeekDays = () => {
+const WeekDays = ({ sth }) => {
 
     const [daysList, setDaysList] = useState(days)
     const handleChange = (withValue, name) => {
-        setDaysList(daysList.map(day => day.name === name ? ({ ...day, amount: +withValue }) : day))
+        const newValues = daysList.map(day => day.name === name ? ({ ...day, amount: +withValue }) : day)
+
+        setDaysList(newValues)
+
+        sth(newValues.map(({ amount }) => amount).reduce((acc, cur) => acc + +cur, 0))
         console.log(name, withValue)
     }
     
@@ -23,15 +27,13 @@ const WeekDays = () => {
 
     return (
         <StyledWeekDays>
-            {daysList.map(({name, amount}) => {
+            {daysList.map(({ name, amount }) => {
                 return (
-                    <label>{name}: <input type="number" onChange={e => {handleChange(e.target.value, name)}} value={amount}/></label>
+                    <label key={name}>{name}: <input type="number" onChange={e => {handleChange(e.target.value, name)}} value={amount}/></label>
                 )
             })}
 
-            <StyledTotalHours> Total Hours: {
-                daysList.map(({ amount }) => amount).reduce((acc, cur) => acc + cur, 0)
-            }</StyledTotalHours>
+            <StyledTotalHours> Total Hours: {}</StyledTotalHours>
         </StyledWeekDays>
 
     )
