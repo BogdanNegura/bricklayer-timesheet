@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { StyledSalaryCalculator } from './salary-calculator.style'
+import { StyledInput } from '../week-days/week-days.style'
 // import { StyledWeekDays } from '../week-days/week-days.style'
 
 const fields = [
@@ -36,7 +37,7 @@ const SalaryCalculator = ({ toho }) => {
             <h2>Salary Calculator</h2>
             {fieldsList.map(({name, amount, id}) => {
                 return (
-                    <label key={id}>{name}:<input type="number" onChange={e => {handleChange(e.target.value, name)}} value={amount} key={fields.id}/></label>
+                    <label key={id}>{name}:<StyledInput type="number" onChange={e => {handleChange(e.target.value, name)}} value={amount} key={fields.id}/></label>
                 )
             })}
                 
