@@ -33,7 +33,7 @@ const WeekDays = ({ sth }) => {
                 )
             })}
 
-            <StyledTotalHours> Total Hours: {}</StyledTotalHours>
+            <StyledTotalHours> Total Hours:</StyledTotalHours>
         </StyledWeekDays>
 
     )
