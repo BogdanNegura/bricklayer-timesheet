@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const StyledInput = styled.input`
+    background-color: var(--light-color);
+`
+
 export const StyledWeekDays = styled.div`
     display: flex;
     flex-direction: column;
