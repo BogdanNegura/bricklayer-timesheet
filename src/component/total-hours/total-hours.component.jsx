@@ -1,9 +1,12 @@
 import React from 'react'
+import {StyledTotalIncome} from '../total-hours/total-hours.style'
+
 
 const TotalHours = ({th}) => {
 
     return (
-        <h1>{th}</h1>
+        <StyledTotalIncome>Total Hours: {th}</StyledTotalIncome>
+        
     )
 }
 

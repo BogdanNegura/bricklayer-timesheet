@@ -1,0 +1,26 @@
+[
+    {
+        "rank": "1",
+        "company": "HarleQuin",
+        "total_income": "950",
+        "tax_deduced": "200",
+        "total_paid": "750",
+        "date": "28.09.2019"
+    },
+    {
+        "rank": "2",
+        "company": "HarleQuin2",
+        "total_income": "1000",
+        "tax_deduced": "200",
+        "total_paid": "800",
+        "date": "29.09.2019"
+    },
+    {
+        "rank": "3",
+        "company": "HarleQuin3",
+        "total_income": "850",
+        "tax_deduced": "200",
+        "total_paid": "650",
+        "date": "30.09.2019"
+    }
+]

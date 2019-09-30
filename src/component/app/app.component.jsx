@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import WeekDays from '../week-days'
 import TotalHours from '../total-hours'
 import SalaryCalculator from '../salary-calculator'
+import TableHistory from '../table-history'
+import data from '../data/income-history.json'
 import './app.component.css'
+
 
 const TimeSheetApp = () => {
     const [totalHours, setTotalHours] = useState(0) 
@@ -13,6 +16,7 @@ const TimeSheetApp = () => {
             <WeekDays sth={setTotalHours}/>
             <TotalHours th={totalHours}/>
             <SalaryCalculator toho={totalHours}/>
+            <TableHistory data={data}/>
         </div>
     )
 }

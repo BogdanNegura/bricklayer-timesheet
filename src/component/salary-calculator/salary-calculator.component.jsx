@@ -37,7 +37,7 @@ const SalaryCalculator = ({ toho }) => {
             <h2>Salary Calculator</h2>
             {fieldsList.map(({name, amount, id}) => {
                 return (
-                    <label key={id}>{name}:<StyledInput type="number" onChange={e => {handleChange(e.target.value, name)}} value={amount} key={fields.id}/></label>
+                    <label key={id}>{name}:<StyledInput type="text" onChange={e => {handleChange(e.target.value, name)}} value={amount} key={fields.id}/></label>
                 )
             })}
                 
