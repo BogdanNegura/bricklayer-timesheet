@@ -1,6 +1,8 @@
 import React from 'react'
 
 const  TableHistory = (props) => {
+
+
     return (
             <table>
                 <thead>
